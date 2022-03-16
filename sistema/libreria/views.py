@@ -25,6 +25,8 @@ def crear(request):
 def editar(request):
     return render(request, 'libros/editar.html')
 
-def borrar(request):
-    return render(request, 'libros/borrar.html')
+def borrar(request, id):
+    libro = Libro.objects.get(id=id)
+    libro.delete()
+    return redirect('libros') # redireccionar a la funcion libros
     
