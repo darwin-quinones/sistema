@@ -2,5 +2,13 @@
 {% block title %} Agregar nuevo libro {% endblock %}
 
 {% block body %}
-<h1>Formulario para agregar nuevo libro</h1>
+<div class="card">
+    <div class="card-header">
+        Crear un libro
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Datos del libro</h4>
+        {% include 'libros/form.html' %}
+    </div>
+</div>
 {% endblock %}
