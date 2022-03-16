@@ -19,14 +19,19 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Django con Python</td>
-                    <td>img.jpg</td>
-                    <td>Libro sobre Django</td>
-                    <td> <a name="" id="" class="btn btn-info" href="{% url 'editar' %}" role="button">Editar</a>| 
-                       <a name="" id="" class="btn btn-danger" href="{% url 'borrar' %}" role="button">Borrar</a></td>
-                </tr>
+                {% if libros %}
+                    {% for libro in libros %}
+                        <tr>
+                            <td>{{libro.id}}</td>
+                            <td>{{libro.titulo}}</td>
+                            <td>{{libro.imagen}}</td>
+                            <td>{{libro.descripcion}}</td>
+                            <td> <a name="" id="" class="btn btn-info" href="{% url 'editar/libro.id ' %}" role="button">Editar</a>| 
+                            <a name="" id="" class="btn btn-danger" href="{% url 'borrar' %}" role="button">Borrar</a></td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+                
             </tbody>
         </table>
         
