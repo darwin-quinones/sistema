@@ -10,7 +10,6 @@ def nosotros(request):
 
 def libros(request):
     libros = Libro.objects.all()
-    print(libros)
     return render(request, 'libros/index.html', {'libros': libros})
 
 def crear(request):
